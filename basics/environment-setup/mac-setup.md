@@ -80,33 +80,11 @@ Once downloaded, open Spring Tool and navigate to your preferences.
 
 <img src="./images/sts-1.png" width="300"/>
 
-1. Select **Java** in the left panel of your preferences and click on **Installed JREs**.
+1. Navigate to the [IntelliJ Community](https://www.jetbrains.com/idea/download/#section=mac) website and download the Community Edition executable. 
 
 
-<img src="./images/sts-2.png" width="600"/>
+2. Once the download has finished go to your downloads folder, search for the downloaded executable and double click it to begin the install process.
 
-
-<img src="./images/sts-3.png" width="200"/>
-
-
-2. Click **add** on the right side of your preferences menu and select **Standard VM**.
-
-
-<img src="./images/sts-4.png" width="400"/>
-
-3. Click the Directory button to navigate to your installed Java versions. 
-    
-    * When the finder window opens select your HD.
-    * Select **Library** and look for **Java** listed below.
-    * Click on **Java** and navigate into **JavaVirtualMachines** where you should see an <code>adoptopenjdk-8.jdk</code>.
-    * Select this JDK and navigate to **Contents** and then **Home**.
-    * With home highlighted, click **Open**. 
-
-<img src="./images/sts-5.png" width="500"/>
-
-You should now see this:
-
-<img src="./images/sts-6.png" width="500"/>
 
 ## Step 5: Install Maven
 
@@ -128,27 +106,5 @@ Follow these [instructions](https://medium.com/@jeongwhanchoi/how-to-install-apa
 The following is the single command required to install Postman on macOS using Homebrew:
 
 <code>brew cask install postman</code>
-
-## Step 9: Install PostgreSQL 13
-
-We will manually download the PostgreSQL installer visiting the official website. Look at the row for **version 13.x**.
-
-Select the download link which corresponds with your system and click it.
-
-You'll then be prompted to save the file. Click **Save File**. The file should now be located in your **Downloads** folder.
-
-Double click the file, which should launch the installer. You might be asked if you want the application to make changes to your device. Click **yes**.
-
-You'll be presented with several menus in the Setup Wizard.  Click <code>Next</code> until you get to the **Select Components** menu. 
-
-Here, you'll want to select and/or deselect the following and then click <code>Next</code>:
-
-Continue to click <code>Next</code> until you reach the **Password** menu. Here you will create a password for the default Postgres user (which is <code>postgres</code>). The password is completely up to you. That said, *DO NOT* forget your password as you won't be able to login to your database as the superuser.
-
-After you've decided on a password, click <code>Next</code> on the remaining menus and allow time for Postgres to be installed. 
-
-Once the installation is complete, you might be asked if you want to launch Stack Builder. You can say <code>no</code>.
-
-PostgreSQL should now be successfully installed on your computer.
 
 

@@ -70,15 +70,7 @@ $ echo $JAVA_HOME
 ```
 
 
-## Step 4:  Install Spring Tool Suite 4
-
-Navigate to https://spring.io/tools and download the appropriate version of Spring Tool.
-
-If your installation was successful, you should now be able to search for <code>Spring Tool Suite</code> in your spotlight search using <code>cmd+space</code>.
-
-Once downloaded, open Spring Tool and navigate to your preferences. 
-
-<img src="./images/sts-1.png" width="300"/>
+## Step 4:  Install IntelliJ IDEA Community Edition
 
 1. Navigate to the [IntelliJ Community](https://www.jetbrains.com/idea/download/#section=mac) website and download the Community Edition executable. 
 

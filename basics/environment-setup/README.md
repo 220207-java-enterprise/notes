@@ -312,43 +312,8 @@ You should see your operating system listed ("Windows 10" in the above example) 
 
 <br>
 
-## Step 5: Install PostgreSQL 13
 
-In order to install PostgreSQL, please visit [PostgreSQL's official download website](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads). *This site will direct you to Postgres' certified installer.*
-
-Please look at the row for **version 13.x** as we will downloading this version. Select the download link which corresponds with your system and click it.
-
-You'll then be prompted to save the file. Click "Save File".
-
-![Save Postgres Installer](./images/save-postgres.PNG)
-
-The file should now be located in your "Downloads" folder.
-
-![Postgres In Downloads Folder](./images/postgres-in-downloads.PNG)
-
-Double click the file, which should launch the installer. You might be asked if you want the application to make changes to your device. Say "yes".
-
-You'll be presented with several menus in the Setup Wizard.
-
-![Postgres Setup Wizard](./images/postgres-setup.PNG)
-
-Hit "Next" until you get to the "Select Components" menu. Here, you'll want to select and/or deselect the following and then click "Next":
-
-![Postgres Components](./images/postgres-components.PNG)
-
-Continue to hit "Next" until you reach the "Password" menu. Here you will be tasked with providing a password for the default Postgres user (which is "postgres"). The password is completely up to you. **DO NOT forget your password as you won't be able to login to your database as the superuser. If you have to, write your password down somewhere or use a password manager.**
-
-#### ❗ ❗ DO NOT FORGET YOUR POSTGRES PASSWORD ❗ ❗
-
-![Postgres Password](./images/postgres-password.PNG)
-
-After you've decided on a password, hit "Next" on the remaining menus and allow time for Postgres to be installed. Once the installation is complete, you might be asked if you want to launch Stack Builder. You can say "no".
-
-PostgreSQL should now be successfully installed on your computer.
-
-<br>
-
-## Step 6: Install DBeaver
+## Step 5: Install DBeaver
 
 In order to install DBeaver, please visit [DBeaver's official website](https://dbeaver.io/download/).
 
@@ -380,7 +345,7 @@ If your installation was successful, you should now be able to search for and fi
 
 <br>
 
-## Step 7: Install Postman
+## Step 6: Install Postman
 
 In order to download Postman, please visit [Postman's official website](https://www.postman.com/downloads/).
 
@@ -401,6 +366,20 @@ Once you've saved the file, open your "Downloads" folder and double click the ne
 Upon double clicking the executable, the installer will be launched and the program will be installed. In order to verify that it has been installed correctly, you can search for "Postman" on your machine by using your search bar.
 
 Note that you'll likely have to sign up for an account to use the application. Please do so as signing up for an account is completely free.
+
+<br>
+
+## Step 7: Install Apache Tomcat
+
+In order to download Tomcat, please visit [Apache Tomcat's official website](http://tomcat.apache.org/).
+
+Once you've navigated to the site, you should see the following screen:
+
+![Tomcat Home](./images/tomcat-home.PNG)
+
+Scroll down until you see the section labeled "Tomcat 8.5.56" as shown below. Click the "Download" link at the bottom of this section.
+
+![Tomcat 8](./images/tomcat-8.PNG)
 
 <br>
 
@@ -425,21 +404,6 @@ Double click the installer. Once you've done so, the installer should be launche
 ![Open with Code](./images/open-with-code.PNG)
 
 After you've done so, hit "Next" and then "Install" on the next menu. If your installation was successful, you should be able to search for "Visual Studio Code" on your machine.
-
-<br>
-
-## Step 9: Install Apache Tomcat
-
-In order to download Tomcat, please visit [Apache Tomcat's official website](http://tomcat.apache.org/).
-
-Once you've navigated to the site, you should see the following screen:
-
-![Tomcat Home](./images/tomcat-home.PNG)
-
-Scroll down until you see the section labeled "Tomcat 8.5.56" as shown below. Click the "Download" link at the bottom of this section.
-
-![Tomcat 8](./images/tomcat-8.PNG)
-
 
 <br>
 

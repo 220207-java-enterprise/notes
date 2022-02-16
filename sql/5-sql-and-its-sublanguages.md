@@ -11,8 +11,8 @@ Overview
 *   Used to design, access and manipulate data within a database
 *   ANSI standard
 *   Every vendor has its own implementation of SQL
-*   Not a procedural language
-    *   Although we will leverage **_pgPL/SQL_**: **_PostGres Procedure Language extension for SQL_**
+*   Not a procedural language, but a declarative one
+    *   Although there is something called **_PL/SQL_**: **_Procedure Language extension for SQL_** which many RDBMS vendors provide support for
 
  
 

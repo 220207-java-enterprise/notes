@@ -1,0 +1,53 @@
+Docker
+
+- Why do we even need it?
+
+	"Works on my machine problem" is a very common problem in SD
+	reason why we face this problem is because developers may have the same exact codebase or the logic
+	everything goes well when the environment is configured uniformly
+	but if any user who is using the application is missing even one dependency, this is a cause for concern
+	we want to ensure that our applicaiton is portable for different machine environments
+
+	Because an application runs on an environment, different environments produce different effects
+
+	Environment variables are out of the control of JVM
+
+- How does Docker mitigate this?
+	
+	Docker is a cool tool that helps us "containerize" our applications
+	Docker encapsulates the application logic as well as pre-define environment that is crucial in running the application
+
+- How is Docker different than VMs?
+	
+							VM vs Container visual
+
+			Virtual Machines							Containers
+		________________________________				________________________________
+		App1		App2		App3					App1		App2		App3
+		________________________________				________________________________
+		Bins/Lib	Bins/Lib	Bins/Lib				Bins/Lib	Bins/Lib	Bins/Lib
+		________________________________				________________________________				
+		GuestOS	GuestOS	GuestOS					Container Engine
+		________________________________				________________________________
+			Hypervisor								Operating System							
+		________________________________				________________________________
+			Infrastructure							Infrastructure
+		________________________________				________________________________
+
+
+		
+		Virtual Machines are Guest Operating Systems cross communication between them is not efficient
+
+		Containers are slimmed down and is operated by Container Engines that run on the Host Operating System
+		Container engines will only include exactly what they need to run Applications.
+		A lot of memory is saved by using Containers over VMs.
+
+		Therefore, Containers are light-weight.
+
+
+What is a Docker Image?
+	
+	Images are snapshots of applications that helps us recreate containers on demand.
+	I have used DockerHub to download an image for PostgresSQL and used it on my projects at Revature.
+
+ 

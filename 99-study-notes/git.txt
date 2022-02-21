@@ -1,0 +1,48 @@
+REVATURE
+
+2/8/22
+
+Git
+	Software Configuration Management
+		SCM is the task of tracking and controlling changes for an application or suite of applications
+	Primary Objectives
+		Identifies all items that collectively define the software configuration
+		Manages changes to one or more of these items
+		Facilitates the construction of different versions of an application
+	What is being tracked?
+		Source code files, Data schema files, Build specification files, Container images, Documentation files
+	Git- A version control system
+		Distributed version control system
+		Industry standard
+		Secure
+		Flexible
+	Git Repositories
+		A Git repository is simply a data source containing all the information needed to retain and manage the revisions and history of a project
+		Within a repository, Git maintains two primary data structures, the object store and the index.
+		All of this repository data is stored at the root of your working directory in a hidden subdirectory named .git
+	Object Store
+		Contains data files, log messages, author information, dates and other information required to rebuild any version or branch of the project
+		Fundamental Objects - Blobs, Trees, Commits, Tags
+	Index
+		A temporary and dynamic binary file that describes the directory structure of the entire repository
+		Captures a version of the project's overall structure at some point in time
+			Depending on what branch and commit we have checked out
+	Can be manipulated in methodical, well-defined steps
+		Add, manipulate or delete some file which is managed within a Git repository
+		Stage file changes
+		Commit staged changes to the index
+	Pack File
+		Git compresses and stores the objects in pack files, which are placed in the object store
+		Git first locates files whose content is very similar and stores the complete content for one of them.
+		It then computes the differences, or deltas, between similar files and stores just the differences.
+	Branches
+		A Git branch is essentially an independent line of development
+		Can be taken advantage of branching when working on new features or bug fixes because it isolates your work from that of other team members
+	Git repository Hosting Websites
+		GitHub, GitLab, AWS CodeCommit, Bitbucket, SourceForge
+	Best Practices
+		Commit Regularly
+		Provide detailed commit message
+		Levarage a branching strategy
+		Communicate with the team
+

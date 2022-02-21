@@ -1,0 +1,345 @@
+
+# Self Study Guiding Question List
+
+
+
+# Unit Testing (by abhilekh)
+
+- What is Unit Testing and why do we do it?
+
+		aka Method Testing
+		We unit test to validate the smallest component of our application
+		Methods are tested in isolation
+
+-	Test file and Class file (SystemUnderTest sut)
+	
+		Package structure for both files are mirrored
+		THerefore service class variables are available on the test context
+		
+		This is how the TestClassSuite communicates with the SystemUnderTest
+		
+		TestClassSuite contains all methods we create to test the SUT.
+		SystemUnderTest is the class whose methods TCS is testing
+
+
+-	AAA structure in unit testing
+		
+		Each Unit Test method must follow the Arrange, Act, Assert structure
+
+-	Java Reflection
+		
+		java.lang.reflection package
+		
+		A feature in Java programming language
+
+		allows an executing Java program to examine or "introspect" upon itself,
+		
+		in order to manipulate internal properties		
+
+		example - a Java class can obtain names of all it's members and display them
+
+-	Annotations in a Test file
+	
+		@Documented 						- will show up in generated Docs when used
+		@Target(ElementType=?) 			- indicates where we can use this annotation
+		@Retention(RetentionPolicy=?)	- indicates at what point the annotation should be discarded
+												RUNTIME/CLASS/SOURCE
+
+- Writing an Annotation
+		
+		public @interface Test{
+			String description() default ""; // declares a field that can be added as arguments
+		}											// default "" makes argument optional
+
+
+
+## Docker
+- What is a virtual machine?
+		
+		A virtual machine is a compute resource that uses software instead of a physical computer.
+
+- What is a container?
+	
+		A container is a standard unit of software that packages up code and all its dependencies.
+		
+- What is the difference between a virtual machine and a container?
+
+		Virtual Machines are Guest Operating Systems
+		Cross communicaiton betwen VMs is not easy.
+
+		Contianers are slimmed down
+		Operated by Container Engines that run on Host OS
+		
+		A lot of memory is saved by using Containers over VMs
+		
+
+- What does the command "docker ps" do?
+
+		lists docker containers that are running. PS = Process Status
+
+- What Docker CLI command can be used to access a running container's file system?
+
+		docker exec -it <container-name> /bin/bash
+
+- How do you run a container?
+
+		"Works on my machine" problem
+		Not all computers have the same environment congifurations
+		containers ensure that our application is portable for different machine environments
+
+- Why do we use Docker?
+		
+		An application cannot be guaranteed to run uniformly
+		A lot depends on the environmental variables of a machine
+		Docker is a cool tool that helps us "containerize" our applications
+		Encapsulates application logic with a pre-defined environment
+		We use docker to mitigate this 		
+
+
+## Relational Databases
+- What is a relational database used for?
+
+		Organizes data into tables which can be linked based on data common to each other
+		This allows us to create interesting reports for the data stored in them
+
+- What is the relationship between PostgreSQL and DBeaver? What does what?
+		
+		PostgreSQL is a RDBMS
+		RDBMS is a software that allows CREATE, READ, UPDATE and DELETE functionality
+
+		DBeaver is a database tool that supports all databases including PostgreSQL
+				
+
+- What is meant by the word "schema" when discussing relational databases?
+
+		Schemas is the organization of data as a blueprint of how the database is constructed
+		Includes all tables and their relationships
+		Also helps separate databases as separate "workspaces" in DBeaver
+
+- What structure is used to store data in a relational database?
+
+		A relational database stores data in tables.
+		Tables are organized into columns and each colum stores one type of data.
+		Rows are single instances of the table
+		
+- What is a primary key?
+
+		The column that contain values that uniqely idenntify each row in a table				
+
+- Can a table have more that one primary key?
+
+		No
+
+- What is a candidate key?
+
+		Another column that contain values that uniquely identify each row
+		Possible "Candidates" for Primary Key
+
+- What are some common data constraints we may put onto table columns?
+
+		NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY etc...
+		
+- What are some common data types we may specify for table columns?
+
+		VARCHAR, BOOLEAN, NUMBER, BLOB, TEXT etc...	
+	
+- How can we create "relationships" between two different tables within our database?
+	
+		Relationships are made by creating a Foreign Key Constraint.
+		One table contains a foreign key that identifies the PK of another table.
+		
+- What is meant by multiplicity when discussing relational data models?
+
+		Multiplicity is an attribute between two tables that specifies the cardinality
+		Cardinality means the number of instances of one entity can be associated with another
+		0:1, 1:1, 1:M
+		
+- What should happen when data from one table is deleted but is referenced by a record in another table? What is concept this called?
+		
+		We must retain flexibility of the database by eliminating redundancy and inconsistent data
+		This is called Normalization
+		
+
+- What is a Lookup table?
+
+		A table that acts as a "master list" for something
+
+- What is a Junction Table
+
+		A table that enables to create a many to many relation between two tables
+
+- Drop vs Truncate Table
+		
+		DROP deletes a table
+		TRUNCATE deletes all rows from a table
+
+- DDL, DML, DCL, TCL
+
+		DDL - Data Definition Language			CREATE, DROP, ALTER, RENAME, TRUNCATE
+		DML - Data Manipulation Language			SELECT, INSERT, UPDATE, DELETE
+		DCL - Data Control Language				GRANT, REVOKE
+		TCL - Transaction Control Language		START TRANSACTION, COMMIT, ROLLBACK
+
+- Transaction Properties
+
+		ACID Properties
+
+		Atomicity		-The entire transaction takes place at once or doesn't happen at all
+		Consistency	-The database must be consistent before and after the transaction
+		Isolation		-Multiple Transactions occur independently withour interference
+		Durability	-The changes of a successful transaction occurs even if system failure occurs
+
+- Commit in SQL Server
+
+		Commit is used for permanent changes.
+		Using Commit, change made by that query will be permanent and visible.
+		We can't Rollback after the Commit.
+
+- Rollback in SQL Server
+
+		ROLLBACK is a command that causes data changes
+		since the last BEGIN WORK , or START TRANSACTION to be discarded by the RDBMS
+		So that the state of the data is "rolled back" to the way it was before those changes were made.
+
+- Setting Savepoints
+
+		SQL Server savepoints are used to roll back transactions to a specified point.
+
+
+- Scalar functions
+
+		Functions which return a single value from an input value
+
+
+- Aggregate Functions
+
+		Functions that performs a calculation on a set of values and returns a single value
+
+- Set Operations
+
+		The four set operators union, union all, intersect and except
+		Allow us to serially combine two or more select statements
+
+- Nested Query
+		
+		Subquery or Inner query
+		Query within another SQL query
+		embedded within the WHERE clause
+
+		example:
+			SELECT column_name [, column_name ]
+			FROM   table1 [, table2 ]
+			WHERE  column_name OPERATOR
+   			(SELECT column_name [, column_name ]
+   			FROM table1 [, table2 ]
+   			[WHERE])
+
+- Indexes
+		
+		Indexes are special lookup tables 
+		The database search engine can use it to speed up data retrieval
+		An index is a pointer to data in a table
+		
+- Views
+		
+		A virtual table based on the result-set of an SQL statement
+		
+- Task: Start creating the table structure for your Foundations Project (see project requirements document for a provided ERD)
+
+
+## OOP
+
+- Dependency Injection
+
+
+##Java
+
+- Singleton Design Pattern
+
+- Factory Design Pattern
+
+- JDBC API Overview
+
+- JDBC Driver Types
+
+- JDBC Statement Types
+
+- Reading from properties file
+
+- Establishing a JDBC connection
+
+- DAO Design Pattern
+
+- Transaction management with JDBC
+
+- Extracting data from a ResultSet
+
+- State Design Pattern
+
+- Inserting Data with JDBC
+
+- Updating Data with JDBC
+
+- Deleting Data with JDBC
+
+
+## DataStructure and Algorithm
+
+- Arrays
+
+		Linear data structure
+		Elements can be added in a continuous manner in memory address space
+										
+- ArrayList
+		
+		Class belonging to the Collection framework
+		We can pass type of element we can store in ArrayList
+		Size grows dynamically
+		
+		eg:		ArrayList<Integer> nums = new ArrayList<Integer>;
+
+		
+- LinkedList
+
+- Sets
+
+
+
+## XML
+
+- Elements
+
+- Attributes
+
+- Namespaces
+
+
+
+
+## Tooling
+
+- Build Automation
+
+- Dependency Management
+
+- Apache Maven
+
+- Maven Build Lifecycle
+
+- Creating a new Maven Project
+
+- Dependency Management
+
+
+## JUnit
+
+- What is JUnit?
+
+- Assertions
+
+- Annotations
+
+
+
+
+

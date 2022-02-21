@@ -1,0 +1,74 @@
+2/8/2022
+
+Java Basics
+	Building Blocks of Programming
+		Values and Variables
+		Operations
+		Expressions and Statements
+		Decisions
+		Loops
+		Function/Methods
+
+	Java Variables
+		A name representing some value stored in computer memory
+		Variables in Java are labeled as a specific type (either primitive or objects)
+			String username = "jsmith";
+			int age = 23;
+		Variable naming rules
+			Reserved keywords cannot be uses
+			Cannot start with a digit but digits can be used (eg: name1 is valid)
+			Can start with a letter, an underscore or a dollar sign
+			Cannot use other symbols or spaces (%,^,&)
+			Best practice: give variables meaningful names
+
+	Java Primitive Datatypes and their Wrapper classes
+		boolean - Boolean
+		byte - Byte
+		char - Character
+		double - Double
+		float - Float
+		int - Integer
+		long - Long
+		short - Short
+
+	Java Expressions and Statements
+		An expression is akin to a clause in the English language which portrays a specific meaning.
+			It can stand alone or be a part of a sentance
+		A statement is one or more expressions that forms a complete unit of execution
+			In Java, all statements end with a semicolon (;)
+
+	Java Flow Control
+		Decision-making statements
+			if-else statements
+			switch statements
+		Iterative statements
+			for loops
+			while loops
+			do-while loops
+		Branching statements
+			break statements
+			continue statements
+
+	IF statements
+		Consists of a condition, followed by a statement or a set of statements
+		Statements are executed only when the given condition is true
+			If the condition is false then the statements inside the if statement body are completely ignored
+
+	IF-ELSE statements
+		The statements inside of the if block will execute if the condition is true, and the statements inside the else block would execute if the condition is false
+
+	IF-ELSE-IF statements
+		Used when we need to check multiple conditions
+		As soon as a condition is met, the corresponding set of statements get executed, rest gets ignored
+			If none of the condition is met then the statements inside "else" gets executed (if present)
+
+	Nested IF statements
+		The code within the outer if statement will execute if its condiditon is true.
+		THe code inside of the nested if statement will only execute if both the conditions the outer condition and its own condition are true
+
+	Switch Statements
+		Use the switch keyword followed by a set of parenthesis used to pass a value into the switch block
+		The value passed into the switch block is compared to nested code blocks called 'cases'
+		Each case has a value associated to it that is compared to the value passed into the switch statement to determine if that case's code block should be executed
+		There can be an optional default block that will be executed in case none of the case conditions are met
+		

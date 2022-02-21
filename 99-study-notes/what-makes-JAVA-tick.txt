@@ -1,0 +1,30 @@
+2/8/2022
+
+What Makes Java Tick?
+	The Java Platform
+		A platform is the environment in which a piece of software is executed
+			Could refer to hardware and an OS, but could also refer to a software-only environment
+		Made available to consumers in the form of the JRE, which is used to execute java applications
+		Made available to consumers in the form of the JDK, which is used to develop java applications
+		Java's flexibility to "write once, run anywhere" is facilitated by the JVM, which ensures platform-interdependence
+	JDK, JRE and JVM
+		JDK- Java Development Kit
+			Provides the tools, executables, and binaries required to compile, debug and execute a Java program
+			Minimum for developing Java applications
+		JRE- Java Runtime Environment
+			Software distribution containing a stand-alone JVM and the Java standard library
+			Minimum for running Java applications
+		JVM- Java Virtual Machine
+			Responsible for converting Java bytecode into executable machine code
+	Java Build Process
+		<-------------------------------------compilation---------------------------->
+		MyClass.java __ javac MyClass.java__ Java compiler__outputs___MyClass.class____java MyClass__ Java Virtual Machine__outputs OS-specific 
+		(source code)							(bytecode)						instructions
+
+	Java Memory Architecture
+		The JVM's memory architecture can be divided into two main data structures:
+		Stack
+			Used for static memory allocation of primitive values or references to objects in the heap
+		Heap
+			Used for dynamic memory allocation for Java objects and JRE classes at runtime
+

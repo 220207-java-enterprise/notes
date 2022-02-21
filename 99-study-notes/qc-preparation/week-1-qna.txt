@@ -1,0 +1,195 @@
+What? How? Why?
+
+Git - 
+
+Java - 
+
+OOP - 
+
+DS&A - 
+
+SDLC - 
+
+
+Q&A
+
+• What is Java?
+	-> Java is a general-purpose programming language that is class-based and object-oriented. 
+	The programming language is structured in such a way that developers can write code anywhere 
+	and run it anywhere without worrying about the underlying computer architecture. 
+	It is also referred to as write once, run anywhere (WORA).
+
+• In what way does Java employ abstraction?
+	-> In java, abstraction is achieved by interfaces and abstract classes. 
+	Interfaces allows you to abstract the implemetation completely while abstract classes allow partial abstraction as well.
+
+• In what way does Java employ polymorphism?
+	-> Java implements polymorphism in two ways: 
+	1. Static or compile-time polymorphism is done by method overloading (more then one methods sharing the same name but different number/types/order of parameters)
+	2. Dynamic or runtime polymorphism is done by method overriding (defining a method in the child)
+
+• In what way does Java employ inheritance?
+	-> Inheritance in Java is a mechanism in which one object acquires all the properties and behaviors of a parent object.
+	The idea behind inheritance in Java is that you can create new classes that are built upon existing classes. 
+	When you inherit from an existing class, you can reuse methods and fields of the parent class.
+
+• In what way does Java employ encapsulation?
+	-> Encapsulation in Java is a mechanism of wrapping the data (variables) and code acting on the data (methods)
+	together as a single unit. In encapsulation, the variables of a class will be hidden from other classes,
+	and can be accessed only through the methods of their current class.
+
+• Describe the JDK, JRE, and the JVM
+	-> JDK is a software development kit whereas JRE is a software bundle that allows Java program to run,
+	whereas JVM is an environment for executing bytecode. The full form of JDK is Java Development Kit,
+	while the full form of JRE is Java Runtime Environment, while the full form of JVM is Java Virtual Machine.
+
+• List the Java primitive types
+	-> Primitive Data Types. The eight primitives defined in Java are:
+	int, byte, short, long, float, double, boolean, and char – those aren't considered objects and represent raw values.
+
+• What are wrapper classes?
+	-> The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
+
+• What is autoboxing and unboxing?
+	-> Autoboxing is the automatic conversion that the Java compiler makes between the primitive types
+	and their corresponding object wrapper classes. For example, converting an int to an Integer,
+	a double to a Double, and so on. If the conversion goes the other way, this is called unboxing.
+
+• What does the "final" keyword mean?
+	-> Java final keyword is a non-access specifier that is used to restrict a class, variable, and method.
+	If we initialize a variable with the final keyword, then we cannot modify its value. 
+	If we declare a method as final, then it cannot be overridden by any subclasses.
+
+• What does the "static" keyword mean?
+	-> The static variable can be used to refer to the common property of all objects (which is not unique for each object),
+	for example, the company name of employees, college name of students, etc.
+	The static variable gets memory only once in the class area at the time of class loading.
+
+• What are variable arguments?
+	-> Varargs is a short name for variable arguments. In Java, an argument of a method can accept arbitrary number of values.
+	... (three dots) is used in the formal parameter of a method.
+	A method that takes variable number of arguments is called a variable-arity method, or simply a varargs method.
+
+• What are the scopes in which a variable can exist in - in Java?
+	-> Scope of a Variable. In programming, a variable can be declared and defined inside a class, method, or block.
+	It defines the scope of the variable i.e. the visibility or accessibility of a variable.
+	Variable declared inside a block or method are not visible to outside.
+
+• What is the difference between an object and a class?
+	-> The difference is simple and conceptual. A class is a template for objects. 
+	An object is a member or an "instance" of a class.
+	An object has a state in which all of its properties have values that you either explicitly define or that are defined by default settings.
+
+• What is the "new" keyword used for?
+	-> New keyword in JavaScript is used to create an instance of an object that has a constructor function.
+	On calling the constructor function with 'new' operator, the following actions are taken:
+	A new empty object is created.
+
+• What is the "super" keyword used for?
+	-> The super keyword in java is a reference variable that is used to refer parent class objects.
+	The keyword “super” came into the picture with the concept of Inheritance.
+	Basically this form of super is used to initialize superclass variables when there is no constructor present in superclass.
+
+• What is the "this" keyword used for?
+	-> The this keyword refers to the current object in a method or constructor.
+	The most common use of the this keyword is to eliminate the confusion between class attributes and parameters with the same name.
+
+• What is a constructor?
+	-> A constructor in Java is a special method that is used to initialize objects.
+	The constructor is called when an object of a class is created.
+
+• What is the difference between the == operator and .equals() method?
+	-> == checks if both objects point to the same memory location
+	whereas . equals() evaluates to the comparison of values in the objects
+
+• What is the Object class's function in the Java language?
+	-> The Object class is the parent class of all the classes in java by default.
+	In other words, it is the topmost class of java.
+	The Object class is beneficial if you want to refer any object whose type you don't know.
+
+• What is a POJO?
+	-> In software engineering, a plain old Java object (POJO) is an ordinary Java object, not bound by any special restriction.
+
+• What is method overloading?
+	-> Method overloading is a feature of Java in which a class has more than one method of the same name and their parameters are different.
+
+• What is method overriding?
+	->  If a subclass provides the specific implementation of the method that has been declared by one of its parent class, it is known as method overriding.
+
+• What is type casting?
+	-> Typecasting, also known as type conversion in Java, is a process that helps developers to assign a primitive data type value to other primitive data types.
+
+• What are access modifiers?
+	-> 	
+
+• List the access modifiers from most visible to least visible
+
+• What is the difference in visibility between protected and package-private access level?
+
+• What are some non-access modifying keywords used in Java?
+
+• What is the difference between an interface and an abstract class?
+
+• Is multiple inheritance supported in Java?
+
+• Can garbage collected be forced in Java?
+
+• What are packages used for?
+
+• What are imports?
+
+• What are static imports?
+
+• What is the main method signature?
+
+• What is an array?
+
+• What property of a Java primitive array tells us the size of the array?
+
+• Does Java employ "pass-by-value" or "pass-by-reference"?
+
+• What are some constructs used in Java for flow control?
+
+• What is the difference between a while and a do-while loop?
+
+• What is the difference between a for loop and an enhanced for loop?
+
+• What are short-circuit boolean operators?
+
+• What is the String Pool?
+
+• What is the difference between String, StringBuilder, and StringBuffer?
+
+• Are Java Strings thread-safe? Why?
+
+• How can a String be created outside of the String Pool?
+
+• What is string interning?
+
+• What is the difference between an exception and an error in Java?
+
+• What is the difference between a checked and an unchecked exception?
+
+• What causes a NullPointerException?
+
+• How can exceptions be handled in Java?
+
+• What is the purpose of the finally block?
+
+• Are you required to handle RuntimeExceptions?
+
+• Can exceptions be caught by multiple catch blocks in any order?
+
+• Why do abstract classes have constructors?
+
+• What modifying keywords are implicitly applied to variable members declared within an interface?
+
+• What are functional interfaces?
+
+• What are marker interfaces?
+
+• What are annotations used for in Java?
+
+• What are default interface methods?
+
+• What is the difference between an array and a linked list?

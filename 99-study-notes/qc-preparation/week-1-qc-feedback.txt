@@ -1,0 +1,21 @@
+Exceptions
+->	Difference between checked vs unchecked exceptions vs compilation error
+	-> Exceptions occur after application runs
+		-> Checked exceptions are checked by the compiler. Code will not compile. We must handle (try/catch or throws) before we run the application
+		-> Unchecked exceptions are not checked by the compiler. Code will run even if you dont handle it. (RuntimeException)
+	-> compilation errors fail during compilaltion (syntax error)
+
+	How to create custom exceptions?
+	-> create own class for exception and extend from an Exception class
+
+.equals() and ==
+-> 	== checks for equality
+	.equals() checks for location in heap memory
+	.equals() needs to be @Override so we can modify the inherited method
+	
+Encapsulation
+->	Access Modifiers (default, protected, private, public)
+	Getters/Setters
+
+
+

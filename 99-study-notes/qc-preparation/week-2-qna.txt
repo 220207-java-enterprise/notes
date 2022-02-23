@@ -9,9 +9,9 @@
 
 		aka Method Testing
 		We unit test to validate the smallest component of our application
-		Methods are tested in isolation
+		
 
--	Test file and Class file (SystemUnderTest sut)
+-	Test file (TestClassSuite TCS) and Class file (SystemUnderTest SUT)
 	
 		Package structure for both files are mirrored
 		THerefore service class variables are available on the test context
@@ -61,6 +61,10 @@
 - What is a container?
 	
 		A container is a standard unit of software that packages up code and all its dependencies.
+
+- What is a Docker image?
+		
+		A snapshot of the allication that needs to be containerized
 		
 - What is the difference between a virtual machine and a container?
 
@@ -71,17 +75,24 @@
 		Operated by Container Engines that run on Host OS
 		
 		A lot of memory is saved by using Containers over VMs
-		
 
 - What does the command "docker ps" do?
 
 		lists docker containers that are running. PS = Process Status
+
+- What command can we use to run a Docker container?
+
+		docker run --name local-db -p 5432:5432 -e POSTGRES_PASSWORD=revature -d postgres		
 
 - What Docker CLI command can be used to access a running container's file system?
 
 		docker exec -it <container-name> /bin/bash
 
 - How do you run a container?
+
+		docker run --name local-db -p 5432:5432 -e POSTGRES_PASSWORD=revature -d postgres
+
+- Why do we run a container?
 
 		"Works on my machine" problem
 		Not all computers have the same environment congifurations
@@ -250,37 +261,155 @@
 ## OOP
 
 - Dependency Injection
+		
+		Dependency Injection is a architectural technique in programming
+		
+		Allows us to pass one object as a dependency to another.
+		2 ways of Injecting Dependencies are:
+			1. Constructor Injection - Pass AbjectA inside the constructor of ObjectB
+			2. Setter Injection - less common - create a setter for ObjectA inside ObjectB		
 
+		This is done to minimize creation of too many objects everytime they are needed
+		Now we can "share" a single instance across many classes
+		And promotes loose coupling of application
+		loosely coupled means the application wont break in many places during refactoring
 
 ##Java
 
-- Singleton Design Pattern
-
 - Factory Design Pattern
 
-- JDBC API Overview
+		A Design Pattern that abstracts away the creation of a class
+		ConnectionFactory.java creates Connection to database
+		Encapsulated logic to load instance and create connection 
+								- getInstance()		- getConnection()
+
+- Singleton Design Pattern
+		
+		A Design Pattern that restricts the instantiation of class into one single instance
+
+		Eager loading 	- create the instance ahead of time (at class load time)
+							- constructor of ConnectionFactory is set to private
+							- a public static getInstance() method returns ConnectionFactory
+
+		Lazy loading		- create the instance
+	
+- State Design Pattern
+
+		A Design Pattern that allows an object to alter its behavior when its internal state changes
+		
+		This design pattern uses 
+
+		On Quizzard we encapsulated the state of our application using an AppState class
+		We created all of the dependencies we expect to use
+		example: shared one BufferedReader instance to use across all contexts of application
+		
+		Wire them together to minimize the number of objects we have to create
+
+		ScreenRouter router = new ScreenRouter();
+		router.addScreen(new LoginScreen(consoleReader, userService));
+
+- DriverManager
+
+		This class file comes with the JRE
+		DriverManager will register our Driver (postgresql jar file)
+		Then provides an implementation of the Connection interface
+		Which then provides an implementation of 3 types of Statement interfaces
+		(Statement, Prepared, Callable)
+
+- Driver
+
+		Class we download with the JAR dependency
+		Will be used by DriverManager to provide Postgres Driver file with Connection interface
+		We initialize this class inside a static block in ConnectionFactory
+		So we can load Postgres Driver into memory as fast as possible
+
+		
+
+- JDBC API Overview																		
+	
+																						__________________
+																				------>|	<interface>	|
+																				|		|	Statement		|
+																				|		|________________|
+																				|
+																				|
+																				|
+																				|
+																				|
+				 _________________			 	 _________________		|		_________________________
+				|					|				|	<interface>	|		|		|		<interface>		|
+				|	DriverManager	|-provides-->	|	Connection		|-provides--->|	PreparedStatement		|
+				|________________|				|________________|		|		|_______________________|
+						|														|
+						|														|
+					registers													|
+						|														|		_____________________
+						|														|		|	<interface>		|
+		 		_______v_________												------>|	CallableStatement	|
+				|	<interface>	|													|____________________|
+				|		Driver		|
+				|________________|	
+
 
 - JDBC Driver Types
 
 - JDBC Statement Types
+		
+		3 Statement Types:
+			1. Statement 				- do not require user input in SQL query
+			2. PreparedStatement		- can accept user input in SQL query
+			3. CallableStatement		- can invoke stored procedures 
 
 - Reading from properties file
+		
+		applicaiton.properties helps us obfuscate important data (such as db username/password)
+		This file will be included in out .gitignore file
+
+		Data will be stored as key=value pairs
+		We can parse out the values by refering to the keys
+
+		Properties object will load values by reading the file
+		Thus obfuscating the values
 
 - Establishing a JDBC connection
 
 - DAO Design Pattern
-
+		
+		Data Access Object (DAO)
+		This design pattern allows us to isolate the business layer from the persistence layer
+		
+		
 - Transaction management with JDBC
+
+		Handled using ACID Properties:
+		Atomicity		-The entire transaction takes place at once or doesn't happen at all
+		Consistency	-The database must be consistent before and after the transaction
+		Isolation		-Multiple Transactions occur independently withour interference
+		Durability	-The changes of a successful transaction occurs even if system failure occurs
 
 - Extracting data from a ResultSet
 
-- State Design Pattern
+		Code Example:
+		PreparedStatement pstmt = connection.preparedStatement("SELECT * FROM users WHERE username=?");
+		pstmt.setString(1, user.getUsername();
+
+		ResultSet resultSet = pstmt.executeQuery();
+
 
 - Inserting Data with JDBC
+		
+		Code Example:
+		ResultSet resultSet = pstmt.executeUpdate();
 
 - Updating Data with JDBC
 
+		Code Example:
+		ResultSet resultSet = pstmt.executeUpdate();
+
 - Deleting Data with JDBC
+
+		Code Example:
+		ResultSet resultSet = pstmt.executeDelete();
 
 
 ## DataStructure and Algorithm
@@ -300,46 +429,104 @@
 
 		
 - LinkedList
-
-- Sets
-
+		
+		A datastructure that holds a collection of Node(some data) and a pointer(address to next item)
 
 
 ## XML
+	
+		Special way of formatting data so that it is easily parsable
 
 - Elements
 
+		Usually a pair of opening and closing "tags" 
+		Tags contain value between them
+
 - Attributes
+		
+		Elements can contain more data inside them as key=value pairs 
 
 - Namespaces
 
+		A collection of names that can be used as element or attribute names in an XML document
+		Sets base configuration for dependency management
 
 
+## Maven
+		
+- Apache Maven
 
-## Tooling
-
-- Build Automation
+		Maven is a dependency manager for Java applications
+		Sometimes we need to pull libraries to leverage in our projects
+		Maven helps manage such dependencies in an automated script called - pom.xml	
 
 - Dependency Management
 
-- Apache Maven
-
-- Maven Build Lifecycle
+		We cannot write 100% of the code
+		Need to pull class files written by other people (we have postgres, JUnit and Mockito)
+		We need some type of tool to manage them in a centralized file - pom.xml		
 
 - Creating a new Maven Project
 
-- Dependency Management
+		We need to do 2 things:
+			1. Need to create a pom.xml file
+			2. Change file tree structure
+					- 2 top level directories - main , test
+					- move application logic inside main folder
+					- make test case logic inside test folder
+
+- Build Automation
+
+		Maven Build Lifecycle feature allows us to automate the process of building the application
+		We may want to convert our project into a single executable
+		jar files allow us to build a project artifact
+		Sharing the application is easy with build automation
+
+- Maven Build Lifecycle
+
+		Maven has different steps it can move through
+		
+		VALIDATE	- validate the project is correct and all necessary information is available
+		COMPILE 	- compile the source code of the project
+		TEST		- test the compiled source code using suitable unit testing framework
+		PACKAGE	- take the compiled code and package it in its distributable format, such as JAR
+		VERIFY		- run any checks on results of integration tests to ensure quality criteria is met
+		INSTALL	- install the package into the local repository, for use as a dependency in other local projects
+		DEPLOY		- done with the build environment, copies the final package to the remote repository for sharing with other developers and projects
+		
+		example	-	"mvn package" will first run validate, compile and test
+		
+
 
 
 ## JUnit
 
 - What is JUnit?
 
+		JUnit is a unit teting framework we leveraged using Maven
+		Widely used for Test Driven Development
+
 - Assertions
+		
+		Checking to see what we got was what we expected
+		Assert is a class with several assert methods - assertTrue, assertFalse, assertNull etc...
+		
 
 - Annotations
 
+		@Test 				- marks a method as a test case
+		@Ignore			- tells JUnit to skip a test case
+		@Before			- logic that runs once before every test case
+		@After				- logic that runs once after every test case
+		@BeforeClass		- logic that runs only once before all tests
+		@AfterClass		- logic that runs only once after  all tests
 
+- Test Driven Development (TDD)
+		TDD is a software development process
+		Test cases are developed to specify and validate what the code will do
+		Step-by-Step you build a full applicatoin
+
+		
 
 
 
